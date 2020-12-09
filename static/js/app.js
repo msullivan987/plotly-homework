@@ -67,7 +67,7 @@ function init() {
 
         //Find Values for metadata for #sample-metadata
         let filteredMetadata = otuData.metadata.find(sample => sample.id === 940);
-        
+
         //Create new ul element and add all metadata to li's there
         d3.select("#sample-metadata").append("ul");
 
@@ -80,8 +80,6 @@ function init() {
             .text(function ([key, value]) {
                 return `${key}:${value}`
             });
-
-
     });
 };
 
@@ -140,7 +138,7 @@ function updatePlotly() {
                 xaxis: {
                     title: "OTU IDs"
                 },
-                yaxis: {autorange:true}
+                yaxis: { autorange: true }
             }
             //Build Bubble Chart
             Plotly.react("bubble", bubbleTrace, layout);
@@ -149,7 +147,7 @@ function updatePlotly() {
             let filteredMetadata = otuData.metadata.find(sample => sample.id.toString() === datasetId);
 
             let metadataBody = d3.select("#sample-metadata").select("ul");
-            
+
             metadataBody.selectAll("li")
                 .data(Object.entries(filteredMetadata))
                 .text(function ([key, value]) {
