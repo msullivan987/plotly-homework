@@ -1,6 +1,6 @@
 
 function init() {
-    d3.json("../samples.json").then(function (otuData) {
+    d3.json("./samples.json").then(function (otuData) {
 
         //Populate the dropdown menu with the available sampleId names
         let sampleIds = otuData.names
@@ -84,7 +84,7 @@ function init() {
 };
 
 function updatePlotly() {
-    d3.json("../samples.json").then(function (otuData) {
+    d3.json("./samples.json").then(function (otuData) {
 
         //Create event listener for changing dropdown choices
         let dropdown = d3.select("#selDataset")
